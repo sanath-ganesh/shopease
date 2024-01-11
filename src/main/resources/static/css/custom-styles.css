@@ -1,0 +1,71 @@
+/* Add custom styles to enhance the appearance */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+}
+
+.logo {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.hero {
+    background-color: #f4f4f4;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.hero h2 {
+    color: #333;
+}
+
+.hero p {
+    color: #666;
+}
+
+.hero a.btn-primary {
+    background-color: #ff6600;
+    color: #fff;
+}
+
+.sell {
+    background-color: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.sell h2 {
+    color: #333;
+}
+
+.sell p {
+    color: #666;
+}
+
+.sell a.btn-secondary {
+    background-color: #333;
+    color: #fff;
+}

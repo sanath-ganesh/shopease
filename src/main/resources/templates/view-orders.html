@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>View Orders</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			text-align: center;
+			background-color: #f4f4f4;
+			margin: 0;
+			padding: 0;
+		}
+
+		#container {
+			max-width: 800px;
+			margin: 50px auto;
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 8px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		h1 {
+			color: #333;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-top: 20px;
+		}
+
+		th,
+		td {
+			padding: 12px;
+			border-bottom: 1px solid #ddd;
+			text-align: left;
+		}
+
+		th {
+			background-color: #4CAF50;
+			color: #fff;
+		}
+
+		tr:hover {
+			background-color: #f5f5f5;
+		}
+
+		.button {
+			display: inline-block;
+			padding: 10px 20px;
+			background-color: #4CAF50;
+			color: #fff;
+			text-decoration: none;
+			border-radius: 5px;
+			transition: background-color 0.3s;
+			margin-top: 20px;
+		}
+
+		.button:hover {
+			background-color: #45a049;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="container">
+		<h1>View Orders</h1>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Order ID</th>
+					<th>Product Names</th>
+					<th>Total Price</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="order : ${orders}">
+					<td th:text="${order.id}"></td>
+					<td>
+						<span th:each="orderItem : ${order.orderItems}">
+							<span th:text="${orderItem.product.name}"></span><br />
+						</span>
+					</td>
+					<td th:text="${order.totalAmount}"></td>
+					<td th:text="${order.status}"></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<a href="/" class="button">Back to Home</a>
+	</div>
+</body>
+
+</html>

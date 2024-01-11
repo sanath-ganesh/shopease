@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #007bff;
+            text-align: center;
+        }
+
+        .product-container {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease; /* Add smooth transition */
+        }
+
+        .product-container:hover {
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.3); /* Add hover effect */
+        }
+
+        .product {
+            cursor: pointer;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 200px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        header {
+            background-color: #007bff;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .header-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #f0f0f0;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            color: #333;
+        }
+
+        footer a {
+            margin: 0 10px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a th:href="@{/}">
+            <span class="header-logo">ShopEase</span>
+        </a>
+    </header>
+    <div class="container">
+        <h2>All Products</h2>
+
+        <div th:each="product : ${products}" class="product-container">
+            <a th:href="@{'/products/' + ${product.id}}">
+                <div class="product">
+                    <h3 th:text="${product.name}"></h3>
+                    <p th:text="${product.description}"></p>
+                    <p th:text="'Price: $' + ${product.price}"></p>
+                    <img th:src="'data:image/png;base64,' + ${product.base64Photo}" alt="Product Image" />
+                </div>
+            </a>
+        </div>
+    </div>
+    <footer>
+        <p>ShopEase</p>
+        <a href="/logout">LogOut</a>
+        <div th:if="${cartId != null}">
+            <a th:href="@{'/cart/' + ${cartId}}">View Cart</a>
+        </div>
+        <div>
+            <a href="/orders">View Orders</a>
+        </div>
+    </footer>
+</body>
+
+</html>

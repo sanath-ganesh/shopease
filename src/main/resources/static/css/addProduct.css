@@ -1,0 +1,46 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 20px;
+}
+
+.container {
+    text-align: center;
+}
+
+.logo {
+    font-size: 36px;
+    font-weight: bold;
+    color: #007bff;
+    cursor: pointer;
+}
+
+h2 {
+    color: #007bff;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838; /* Darker shade on hover */
+}
