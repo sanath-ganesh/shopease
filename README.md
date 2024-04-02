@@ -53,12 +53,14 @@ A step-by-step guide to getting a development environment running:
   settings.put("hibernate.hbm2ddl.auto", "update");
   settings.put("hibernate.show_sql", "true");
   settings.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
+  ```
   
 3. Ensure that the hibernate.hbm2ddl.auto property is set appropriately for your development environment.
 
 4. Build the project with Maven to resolve dependencies:
   ```sh
   mvn clean install
+  ```
 
 5. Run the application using Maven:
   ```sh
